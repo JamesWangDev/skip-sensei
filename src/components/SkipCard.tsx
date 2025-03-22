@@ -30,7 +30,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
     >
       <div className="relative aspect-video bg-gray-800 overflow-hidden">
         <img 
-          src={`https://source.unsplash.com/featured/?skip,container,waste&sig=${skip.id}`} 
+          src={`https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=800`} 
           alt={`${skip.size} Yard Skip`} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 opacity-80"
           loading="lazy"

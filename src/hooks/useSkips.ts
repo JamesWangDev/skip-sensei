@@ -34,11 +34,6 @@ export const useSkips = (postcode: string = "NR32", area: string = "Lowestoft") 
 
   const selectSkip = (skip: Skip) => {
     setSelectedSkip(skip);
-    toast({
-      title: "Skip Selected",
-      description: `You've selected a ${skip.size} yard skip.`,
-      duration: 3000,
-    });
   };
 
   return {

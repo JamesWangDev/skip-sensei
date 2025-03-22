@@ -1,69 +1,82 @@
-# Welcome to your Lovable project
+# Skip Sensei
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/47b8edeb-54ba-4b6d-ac7b-12e3933ac6ef
+This project is a redesign of the skip selection page for WeWantWaste.co.uk. The goal was to create a modern, responsive interface while maintaining the core functionality of the original page.
 
-## How can I edit this code?
+### Test Task Requirements
+- Redesign the skip selection page from WeWantWaste.co.uk
+- Maintain original functionality while improving UI/UX
+- Ensure responsive design for both mobile and desktop
+- Integrate with the provided API endpoint for skip data
+- Focus on clean, maintainable React code
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- Vite - For fast development and optimized builds
+- TypeScript - For type safety and better code maintainability
+- React - For building the user interface
+- shadcn-ui - For modern, accessible UI components
+- Tailwind CSS - For responsive styling and utility-first CSS
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/47b8edeb-54ba-4b6d-ac7b-12e3933ac6ef) and start prompting.
+## Implementation Approach
 
-Changes made via Lovable will be committed automatically to this repo.
+### 1. Project Setup
+- Created a new React project using Vite for optimal development experience
+- Implemented TypeScript for better code quality and maintainability
+- Set up shadcn-ui and Tailwind CSS for modern, responsive design
 
-**Use your preferred IDE**
+### 2. Data Integration
+- Integrated with the provided API endpoint: `https://app.wewantwaste.co.uk/api/skips/by-location`
+- Implemented proper error handling and loading states
+- Created TypeScript interfaces for type-safe data handling
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 3. UI/UX Improvements
+- Designed a clean, modern interface for skip selection
+- Implemented responsive layouts for both mobile and desktop views
+- Added loading states and error handling for better user experience
+- Improved accessibility with proper ARIA labels and keyboard navigation
+- Enhanced visual hierarchy for better information scanning
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 4. Code Quality
+- Followed React best practices and modern coding standards
+- Implemented component-based architecture for better maintainability
+- Used TypeScript for type safety and better code documentation
+- Organized code into logical modules and components
 
-Follow these steps:
+## Getting Started
+
+### Prerequisites
+
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd skip-sensei
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Development
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+You can edit the code using any IDE of your choice. The development server provides auto-reloading and instant preview of your changes.
 
-**Use GitHub Codespaces**
+## Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project can be deployed to any static hosting service like Netlify, Vercel, or GitHub Pages.
 
-## What technologies are used for this project?
+## Testing
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/47b8edeb-54ba-4b6d-ac7b-12e3933ac6ef) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+The application has been tested on:
+- Desktop browsers (Chrome, Firefox, Safari)
+- Mobile browsers (iOS Safari, Android Chrome)
+- Different screen sizes and orientations

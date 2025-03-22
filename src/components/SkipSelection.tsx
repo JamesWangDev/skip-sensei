@@ -1,12 +1,16 @@
-
 import React from "react";
-import { useSkips } from "@/hooks/useSkips";
 import SkipCard from "./SkipCard";
 import { Skip } from "@/types/skip";
 
-const SkipSelection: React.FC = () => {
-  const { skips, loading, error, selectedSkip, selectSkip } = useSkips();
+type Props = {
+  skips: Skip[];
+  loading: boolean;
+  error: Error | null;
+  selectedSkip: Skip | null;
+  onSelect: (skip: Skip) => void;
+}
 
+const SkipSelection = ({ skips, loading, error, selectedSkip, onSelect }: Props) => {
   if (loading) {
     return (
       <div className="w-full py-20 flex flex-col items-center justify-center animate-pulse">
@@ -44,12 +48,12 @@ const SkipSelection: React.FC = () => {
   return (
     <div className="w-full max-w-6xl mx-auto animate-fade-up pb-24">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {skips.map((skip: Skip) => (
+        {skips.map((skip) => (
           <SkipCard
             key={skip.id}
             skip={skip}
             isSelected={selectedSkip?.id === skip.id}
-            onSelect={selectSkip}
+            onSelect={onSelect}
           />
         ))}
       </div>

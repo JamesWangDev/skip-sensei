@@ -15,6 +15,7 @@ const ContinueBar: React.FC<ContinueBarProps> = ({
   onBack,
   onContinue,
 }) => {
+  
   if (!selectedSkip) return null;
 
   return (

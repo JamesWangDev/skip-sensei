@@ -87,7 +87,7 @@ const ProgressSteps: React.FC<ProgressStepsProps> = ({ currentStep }) => {
               </div>
               <span
                 className={cn(
-                  "progress-step-text",
+                  "progress-step-text hidden sm:block",
                   step.isComplete
                     ? "complete"
                     : step.isActive

@@ -1,4 +1,3 @@
-
 import React from "react";
 import ProgressSteps from "@/components/ProgressSteps";
 import SkipSelection from "@/components/SkipSelection";
@@ -8,7 +7,7 @@ import { useSkips } from "@/hooks/useSkips";
 import { toast } from "@/components/ui/use-toast";
 
 const Index = () => {
-  const { selectedSkip } = useSkips();
+  const { selectedSkip, skips, loading, error, selectSkip } = useSkips();
 
   const handleBack = () => {
     toast({
@@ -27,20 +26,22 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-darkbg pb-20">
       <div className="container py-8 md:py-12">
-        {/* Progress Steps */}
         <ProgressSteps currentStep={3} />
         
-        {/* Page Header */}
         <PageHeader
           title="Choose Your Skip Size"
           subtitle="Select the skip size that best suits your needs"
         />
         
-        {/* Skip Selection Grid */}
-        <SkipSelection />
+        <SkipSelection 
+          skips={skips}
+          loading={loading}
+          error={error}
+          selectedSkip={selectedSkip}
+          onSelect={selectSkip}
+        />
       </div>
       
-      {/* Continue Bar */}
       <ContinueBar 
         selectedSkip={selectedSkip} 
         onBack={handleBack} 

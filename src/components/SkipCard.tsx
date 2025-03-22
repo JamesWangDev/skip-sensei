@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Skip } from "@/types/skip";
 import { cn } from "@/lib/utils";
@@ -19,14 +18,23 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
   
   // Determine if this skip has restrictions
   const isRestrictedToPrivateProperty = !skip.allowed_on_road;
+  const isRestrictedToHeavyWaste = !skip.allows_heavy_waste;
+  const isDisabled = skip.forbidden;
+  
+  const handleClick = () => {
+    if (!isDisabled) {
+      onSelect(skip);
+    }
+  };
   
   return (
     <div 
       className={cn(
         "skip-card rounded-xl border overflow-hidden flex flex-col",
-        isSelected ? "skip-card-selected" : ""
+        isSelected ? "skip-card-selected" : "",
+        isDisabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
       )}
-      onClick={() => onSelect(skip)}
+      onClick={handleClick}
     >
       <div className="relative aspect-video bg-gray-800 overflow-hidden">
         <img 
@@ -40,15 +48,26 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
             {skip.size} Yards
           </span>
         </div>
-        
-        {isRestrictedToPrivateProperty && (
-          <div className="absolute bottom-3 left-3">
-            <span className="skip-warning-badge">
-              <AlertTriangle size={12} />
-              <span>Private Property Only</span>
-            </span>
-          </div>
-        )}
+
+        <div className="absolute w-52 bottom-3 right-3 left-3 flex flex-col gap-2">
+          {isRestrictedToPrivateProperty && (
+            <div>
+              <span className="skip-warning-badge">
+                <AlertTriangle size={12} />
+                <span>Private Property Only</span>
+              </span>
+            </div>
+          )}
+
+          {isRestrictedToHeavyWaste && (
+            <div>
+              <span className="skip-error-badge">
+                <AlertTriangle size={12} />
+                <span>Not suitable for Heavy Waste</span>
+              </span>
+            </div>
+          )}
+        </div>
       </div>
       
       <div className="p-4 flex flex-col flex-grow">
@@ -74,10 +93,13 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
               "w-full py-2.5 rounded-md text-center transition-all font-medium",
               isSelected 
                 ? "bg-darkselected text-white" 
+                : isDisabled
+                ? "bg-gray-700 text-gray-400 cursor-not-allowed"
                 : "bg-gray-800 text-white hover:bg-darkselected/20"
             )}
+            disabled={isDisabled}
           >
-            {isSelected ? "Selected" : "Select This Skip"}
+            {isDisabled ? "Not Available" : isSelected ? "Selected" : "Select This Skip"}
           </button>
         </div>
       </div>

@@ -5,7 +5,7 @@ import ContinueBar from "@/components/ContinueBar";
 import { useSkips } from "@/hooks/useSkips";
 import { toast } from "@/components/ui/use-toast";
 
-const Index = () => {
+const SkipPage = () => {
   const { selectedSkip, skips, loading, error, selectSkip } = useSkips();
 
   const handleBack = () => {
@@ -50,4 +50,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SkipPage;

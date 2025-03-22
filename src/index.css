@@ -108,6 +108,10 @@
     @apply bg-amber-600 text-white text-xs font-medium px-2 py-1 rounded flex items-center gap-1;
   }
 
+  .skip-error-badge {
+    @apply bg-red-600 text-white text-xs font-medium px-2 py-1 rounded flex items-center gap-1;
+  }
+
   /* Progress steps styling */
   .progress-step-line {
     @apply h-[2px] bg-step-inactive/30 flex-grow transition-colors duration-300;

@@ -1,4 +1,3 @@
-import React from "react";
 import ProgressSteps from "@/components/ProgressSteps";
 import SkipSelection from "@/components/SkipSelection";
 import PageHeader from "@/components/PageHeader";

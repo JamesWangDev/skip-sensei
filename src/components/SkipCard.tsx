@@ -2,7 +2,7 @@
 import React from "react";
 import { Skip } from "@/types/skip";
 import { cn } from "@/lib/utils";
-import { AlertTriangle, CheckCircle } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 interface SkipCardProps {
   skip: Skip;
@@ -47,14 +47,6 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, isSelected, onSelect }) => {
               <AlertTriangle size={12} />
               <span>Private Property Only</span>
             </span>
-          </div>
-        )}
-        
-        {isSelected && (
-          <div className="absolute inset-0 bg-darkselected/20 flex items-center justify-center">
-            <div className="bg-darkselected text-white px-4 py-1 rounded-full">
-              <CheckCircle className="inline mr-1 h-4 w-4" /> Selected
-            </div>
           </div>
         )}
       </div>

@@ -18,26 +18,25 @@ const ContinueBar: React.FC<ContinueBarProps> = ({
   if (!selectedSkip) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black/90 border-t border-darkborder p-4 backdrop-blur-md z-50 animate-slide-up">
+    <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-darkborder py-3 backdrop-blur-md z-50 animate-slide-up">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center">
           <Button 
-            variant="ghost" 
+            variant="outline" 
             onClick={onBack}
-            className="text-white hover:bg-white/10"
+            className="text-white border-gray-700 hover:bg-white/10 hover:text-white"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
             Back
           </Button>
         </div>
         
-        <div className="flex items-center">
-          <span className="text-white mr-4">
-            {selectedSkip.size} Yard Skip Selected - £{Math.round(selectedSkip.price_before_vat * (1 + selectedSkip.vat / 100))}
+        <div className="flex items-center gap-4">
+          <span className="text-white hidden md:inline">
+            {selectedSkip.size} Yard Skip - £{Math.round(selectedSkip.price_before_vat * (1 + selectedSkip.vat / 100))}
           </span>
           <Button 
             onClick={onContinue}
-            className="bg-darkselected hover:bg-darkselected/90 text-white"
+            className="bg-primary hover:bg-primary/90 text-white"
           >
             Continue
             <ArrowRight className="ml-2 h-4 w-4" />

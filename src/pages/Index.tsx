@@ -25,7 +25,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-darkbg">
+    <div className="min-h-screen bg-darkbg pb-20">
       <div className="container py-8 md:py-12">
         {/* Progress Steps */}
         <ProgressSteps currentStep={3} />
@@ -38,14 +38,14 @@ const Index = () => {
         
         {/* Skip Selection Grid */}
         <SkipSelection />
-        
-        {/* Continue Bar */}
-        <ContinueBar 
-          selectedSkip={selectedSkip} 
-          onBack={handleBack} 
-          onContinue={handleContinue}
-        />
       </div>
+      
+      {/* Continue Bar */}
+      <ContinueBar 
+        selectedSkip={selectedSkip} 
+        onBack={handleBack} 
+        onContinue={handleContinue}
+      />
     </div>
   );
 };

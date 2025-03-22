@@ -9,9 +9,9 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle }) => {
   return (
     <div className="text-center max-w-2xl mx-auto mb-10 animate-fade-in">
-      <h1 className="text-3xl font-bold tracking-tight mb-3">{title}</h1>
+      <h1 className="text-3xl font-bold tracking-tight mb-3 text-white">{title}</h1>
       {subtitle && (
-        <p className="text-muted-foreground text-lg">
+        <p className="text-gray-400 text-lg">
           {subtitle}
         </p>
       )}

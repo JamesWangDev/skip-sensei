@@ -38,23 +38,24 @@
     --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 222 47% 6%;
+  /* Dark theme is now the default */
+  body {
+    --background: 0 0% 7%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 8%;
+    --card: 0 0% 10%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 8%;
+    --popover: 0 0% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 65%;
-    --primary-foreground: 222 47% 10%;
+    --primary: 222 89% 62%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 33% 18%;
+    --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 18%;
+    --muted: 217 33% 15%;
     --muted-foreground: 215 20% 65%;
 
     --accent: 217 33% 18%;
@@ -75,36 +76,36 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-darkbg text-foreground font-sans;
     font-family: 'Inter', sans-serif;
   }
 
   /* Custom skip card styles */
   .skip-card {
-    @apply transition-all duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out bg-darkcard border-darkborder;
     backface-visibility: hidden;
     transform: translateZ(0);
     -webkit-font-smoothing: subpixel-antialiased;
   }
 
   .skip-card-selected {
-    @apply ring-2 ring-step-active bg-white shadow-lg;
+    @apply ring-2 ring-darkselected bg-darkbg shadow-lg border-darkselected;
   }
   
   .skip-card:hover:not(.skip-card-selected) {
-    @apply shadow-md bg-white;
+    @apply shadow-md border-gray-700;
     transform: translateY(-2px);
   }
   
   /* Skip size badge */
   .skip-size-badge {
     @apply bg-skipcard-badge text-white font-medium px-3 py-1 rounded-md;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   /* Warning badge */
   .skip-warning-badge {
-    @apply bg-skipcard-warning text-white text-xs font-medium px-2 py-1 rounded flex items-center gap-1;
+    @apply bg-amber-600 text-white text-xs font-medium px-2 py-1 rounded flex items-center gap-1;
   }
 
   /* Progress steps styling */
@@ -118,7 +119,7 @@
   
   .progress-step-circle {
     @apply w-7 h-7 rounded-full flex items-center justify-center text-white font-medium text-sm transition-all duration-300;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
   .progress-step-circle.inactive {
